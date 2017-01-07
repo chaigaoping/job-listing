@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy] 
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @jobs = Job.all
@@ -41,6 +41,8 @@ class JobsController < ApplicationController
     flash[:alert] = "Job deleted"
     redirect_to jobs_path
   end
+
+  
 
 
   private
